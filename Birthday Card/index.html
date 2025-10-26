@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Card</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card" id="card">
+      <div class="outside">
+        <div class="front"></div>
+        <div class="back"></div>
+      </div>
+      <div class="inside">
+        <p>
+          Feliz cumpleaños, Jaqueline! Que Dios te bendiga mucho y te dé salud,
+          alegría y muchos momentos bonitos.
+        </p>
+      </div>
+    </div>
+
+    <audio id="birthday-music" loop src="happy-birthday.mp3"></audio>
+
+    <script>
+      const card = document.getElementById("card");
+      const music = document.getElementById("birthday-music");
+
+      card.addEventListener("mouseenter", () => {
+        music.play();
+      });
+
+      card.addEventListener("mouseleave", () => {
+        music.pause();
+        music.currentTime = 0;
+      });
+    </script>
+  </body>
+</html>
